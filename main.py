@@ -8,9 +8,6 @@ def index():
     return render_template('index.html')
 @app.route('/submit', methods=['POST'])
 def username():
-    positionInLine-=1
-    place=Name+positionInLine
-    
     Name=request.form["username"]
     Class=request.form["Class"]
     asignementName=request.form["asignementName"]
