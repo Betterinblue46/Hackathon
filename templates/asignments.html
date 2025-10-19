@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ENSC 151</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='ENSC151.css') }}">
+</head>">
+</head>
+<body>
+    <h1>ENSC 151</h1>
+
+
+    <h2>Assignments</h2>
+    <ul>
+        <li>Assignment 1 <button class="submit-btn">Submit</button></li>
+        <li>Assignment 2 <button class="submit-btn">Submit</button></li>
+        <li>Assignment 3 <button class="submit-btn">Submit</button></li>
+        <li>Assignment 4 <button class="submit-btn">Submit</button></li>
+    </ul>
+
+
+</body>
+</html>
+
+
+<!--Add Assignment Section-->
+<button id="add-assignment-btn">Add Assignment</button>
+
+
+<div id="new-assignment-form" style="display: none; margin-top: 10px;">
+    <input type="text" id="assignment-name" placeholder="Assignment Name"><br><br>
+    <textarea id="assignment-desc" placeholder="Description"></textarea><br><br>
+    <input type="date" id="assignment-due"><br><br>
+    <button id="submit-new-assignment">Add Assignment</button>
+</div>
+
+
+<!-- JAVASCRIPT so that the add assignment button works -->
+<script>
+    // Show the form when "Add Assignment" button is clicked
+    const addBtn = document.getElementById('add-assignment-btn');
+    const formDiv = document.getElementById('new-assignment-form');
+
+
+    addBtn.addEventListener('click', () => {
+        formDiv.style.display = 'block';
+    });
+
+
+    // Add new assignment to the list
+    const submitNewBtn = document.getElementById('submit-new-assignment');
+    const assignmentList = document.querySelector('ul'); // the existing <ul> of assignments
+
+
+    submitNewBtn.addEventListener('click', () => {
+        const name = document.getElementById('assignment-name').value;
+        const desc = document.getElementById('assignment-desc').value;
+        const due = document.getElementById('assignment-due').value;
+
+
+        if(name.trim() === "") return; // prevent empty assignments
+
+
+        // Create new list item with its own submit button
+        const li = document.createElement('li');
+        li.innerHTML = `${name} <button class="submit-btn">Submit</button> <br> Description: ${desc} <br> Due: ${due}`;
+
+
+        assignmentList.appendChild(li);
+
+
+        // Clear form and hide it
+        document.getElementById('assignment-name').value = '';
+        document.getElementById('assignment-desc').value = '';
+        document.getElementById('assignment-due').value = '';
+        formDiv.style.display = 'none';
+    });
+
+
+    // Optional: Make all submit buttons change to "Submitted" when clicked
+    document.addEventListener('click', function(e) {
+        if(e.target && e.target.classList.contains('submit-btn')) {
+            e.target.innerText = 'Submitted';
+        }
+    });
+</script>
+

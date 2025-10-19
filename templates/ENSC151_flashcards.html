@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ENSC 151 Flashcards</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='flashcards.css') }}">
+</head>
+<body>
+    <h1>ENSC 151 Flashcards</h1>
+
+
+    <label>Question:</label>
+    <input type="text" id="question-input">
+    <label>Answer:</label>
+    <input type="text" id="answer-input">
+    <button id="create-flashcard">Add Flashcard</button>
+
+
+    <div id="flashcard-container"></div>
+
+
+    <p><a href="flashcards.html">Back to Home</a></p>
+
+
+    <script src="{{ url_for('static', filename='flashcards.js') }}"></script>
+</body>
+</html>
+

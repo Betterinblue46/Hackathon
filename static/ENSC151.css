@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color:cornflowerblue;
+    margin: 20px;
+}
+
+
+h1 {
+    color: #333;
+}
+
+
+ul {
+    list-style-type: none;
+    padding: 0;
+
+
+}
+
+
+li {
+    background-color: #fff;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.1)
+}
+
+
+button {
+    padding: 5px 10px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+
+
+}
+
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+#new-assignment-form {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.1)
+}
+

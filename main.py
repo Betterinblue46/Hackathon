@@ -24,5 +24,9 @@ def username():
 @app.route('/leaderboard')
 def show_leaderboard():
     return render_template('leaderboard.html', leaderboard=leaderboard)
+def show_asignments():
+    return render_template('asignments.html')
+def show_flashcards():
+    return render_template('flashcards.html')
 if __name__ == "__main__":
     app.run(debug=True)
