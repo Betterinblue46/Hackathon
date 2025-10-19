@@ -1,7 +1,50 @@
 <!DOCTYPE html>
-<html>
-<head><title>Flask App</title></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SoupaBass | Get Sendy</title>
+</head>
 <body>
-    <h1>Hello, {{ name }}!</h1>
+  <section>
+        <div class="navigation">
+            <div class="navbar">
+                <div class="logo">
+                    <img class="img" src="{{ url_for('static', filename='images/download.png') }}" alt="StudyQuest Logo">
+                </div>
+                <div class="company">SoupaBass</div>
+                <div class="flashcards">
+                    <a class="flashcardsLink" href="/flashcards.html"> Flashcards </a>
+                </div>
+                <div class="leaderboard">
+                    <a class="leaderboardLink" href="/leaderboard.html"> Leaderboard </a>
+                </div>
+                <div class="classes">
+                    <a class="classesLink" href="/class.html"> Classes </a>
+                </div>
+                <div class="navButton", class="profile"></div>
+            </div>
+        </div>
+    </section>
+    <section class="hero">
+        <div class="hero-text">
+            <h2>Get Motivated & Make Studying Fun</h2>
+            <p>"Yeah, that's that [SoupaBass]" </p>
+            <p class="nicki">  - Nicki Minaj </p>
+        </div>
+    </section>
+    <footer>
+        <h2>Ready to make studying fun?</h2>
+        <p>Check your place on the <a class="footerLink" href="/leaderboard">leaderboard</a>
+            or practice with <a class="footerLink" href="/flashcards.html">flashcards!</a></p>
+    </footer>
+  <form action="/submit" method="POST">
+    <h2>Submit Your Assignment</h2>
+    <input type="text" name="username" placeholder="Your Name" required>
+    <input type="text" name="Class" placeholder="Your Class" required>
+    <input type="text" name="asignmentName" placeholder="Assignment Name" required>
+    <button type="submit">Submit</button>
+  </form>
 </body>
 </html>
