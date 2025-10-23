@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request, redirect
 from datetime import datetime
-positionInLine=350
 app = Flask(__name__)
 leaderboard = []
 @app.route("/")
@@ -24,8 +23,10 @@ def username():
 @app.route('/leaderboard')
 def show_leaderboard():
     return render_template('leaderboard.html', leaderboard=leaderboard)
+@app.route('/asignments')
 def show_asignments():
     return render_template('asignments.html')
+@app.route('/flashcards')
 def show_flashcards():
     return render_template('flashcards.html')
 if __name__ == "__main__":
